@@ -5,7 +5,9 @@
   "license": "MIT",
   "scripts": {
     "lint:fix": "eslint --fix src --ext ts,tsx",
-    "test": "jest"
+    "test": "jest",
+    "dev": "ts-node --inspect --transpile-only --poll --ignore-watch node_modules --respawn src/server.ts",
+    "typeorm": "ts-node ./node_modules/typeorm/cli"
   },
   "devDependencies": {
     "@types/jest": "^26.0.21",
@@ -17,6 +19,6 @@
   },
   "dependencies": {
     "pg": "^8.5.1",
-    "typeorm": "^0.2.31"
+    "typeorm": "^0.2.37"
   }
 }

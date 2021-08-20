@@ -6,13 +6,13 @@ import {
   ManyToMany,
   PrimaryGeneratedColumn,
   UpdateDateColumn,
-} from 'typeorm';
+} from "typeorm";
 
-import { Game } from '../../games/entities/Game';
+import { Game } from "../../games/entities/Game";
 
-@Entity('users')
+@Entity("users")
 export class User {
-  @PrimaryGeneratedColumn('uuid')
+  @PrimaryGeneratedColumn("uuid")
   id: string;
 
   @Column()
@@ -24,7 +24,7 @@ export class User {
   @Column()
   email: string;
 
-  @ManyToMany(() => Game, (game) => game.users)
+  @ManyToMany(() => Game, (game: Game) => game.users)
   @JoinTable()
   games: Game[];
 

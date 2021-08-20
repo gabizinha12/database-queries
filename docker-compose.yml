@@ -1,0 +1,19 @@
+version: "3.9"
+
+services:
+  queries_challenge:
+    image: postgres
+    container_name: queries_challenge
+    restart: always
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=docker
+      - POSTGRES_DB=queries_challenge
+    volumes:
+      - pgdata:/data/postgres
+
+volumes:
+  pgdata:
+    driver: local

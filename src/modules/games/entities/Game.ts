@@ -5,19 +5,19 @@ import {
   ManyToMany,
   PrimaryGeneratedColumn,
   UpdateDateColumn,
-} from 'typeorm';
+} from "typeorm";
 
-import { User } from '../../users/entities/User';
+import { User } from "../../users/entities/User";
 
-@Entity('games')
+@Entity("games")
 export class Game {
-  @PrimaryGeneratedColumn('uuid')
+  @PrimaryGeneratedColumn("uuid")
   id: string;
 
   @Column()
   title: string;
 
-  @ManyToMany(() => User, (user) => user.games)
+  @ManyToMany(() => User, (user: User) => user.games)
   users: User[];
 
   @CreateDateColumn()
