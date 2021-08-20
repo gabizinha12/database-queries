@@ -26,17 +26,6 @@ export class GamesRepository implements IGamesRepository {
   }
 
   async findUsersByGameId(id: string): Promise<User[]> {
-    const userMock = [
-      {
-        id: "string",
-        games: [],
-        first_name: "1",
-        last_name: "2",
-        email: "3",
-        created_at: new Date(),
-        updated_at: new Date(),
-      },
-    ];
     const games = await this.repository
       .createQueryBuilder("games")
       .leftJoinAndSelect("games.users", "users")
